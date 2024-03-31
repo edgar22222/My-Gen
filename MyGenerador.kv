@@ -1,0 +1,200 @@
+<MyLay>:
+	orientation: 'vertical'
+	
+	BoxLayout:
+		orientation: 'horizontal'
+		
+		Spinner:
+			id: serverSpinner
+			text: "Opciones"
+		
+		Button:
+			text: "Add Server"
+			on_release: root.agregar_servidor()
+			
+	Button:
+		text: "Mostrar Servidores"
+		on_release: root.actualizar_spin()
+			
+	Label:
+		id: view_json
+		
+<ConfigServerAlert>:
+	title: "Servidor"
+	size_hint: None, None
+	size: 600, 1250
+	background_color: 0, 0, 5, 1
+	title_color: 0, 0, 0, 1
+	
+	BoxLayout:
+		orientation: "vertical"
+		spacing: "10dp"
+		
+		BoxLayout:
+			orientation: 'horizontal'
+			
+			TextInput:
+				id: inpServerName
+				hint_text: "Server Name"
+				
+			TextInput:
+				id: inpBandera
+				hint_text: "FLAG"
+			
+		TextInput:
+			id: inpServerIp
+			hint_text: "Server Host"
+			
+		BoxLayout:
+			orientation: 'horizontal'
+			
+			TextInput:
+				id: inpServerPort
+				hint_text: "Server Port"
+				
+			TextInput:
+				id: inpSslPort
+				hint_text: "SSL Port"
+				
+		BoxLayout:
+			orientation: "horizontal"
+			
+			TextInput:
+				id: inpProxyIp
+				hint_text: "Proxy Host"
+				
+			TextInput:
+				id:  inpProxyPort
+				hint_text: "Proxy Port"
+				
+		BoxLayout:
+			orientation: "horizontal"
+			
+			TextInput:
+				id: inpUser
+				hint_text: "Username"
+				
+			TextInput:
+				id: inpPass
+				hint_text: "Password"
+			
+		TextInput:
+			id: inpUdpServer
+			hint_text: "UDP SERVER"
+			
+		TextInput:
+			id: inpUdpAuth
+			hint_text: "USERNAME:PASSWORD"
+			
+		TextInput:
+			id: inpUdpObfs
+			hint_text: "UDP OBFS"
+			
+		TextInput:
+			hint_text: "UDP DOWN"
+			
+		TextInput:
+			hint_text: "UDP UP"
+			
+		TextInput:
+			hint_text: "V2ray JSON"
+			
+		Label:
+			text: "Tunnel Types"
+		
+		BoxLayout:
+			orientation: 'horizontal'
+			#spacing: "3dp"
+			
+			CheckBox:
+				id: prtSslPay
+				active: False
+				color: 9, 0, 0, 1
+				on_active: root.check_fsslpay(self.active)
+				
+			Label:
+				text: "SSL/PAY"
+			
+			CheckBox:
+				id: prtSshSsl
+				active: False
+				on_active: root.check_fssl(self.active)
+				
+			Label:
+				text: "SSH/SSL"
+				
+		BoxLayout:
+			orientation: "horizontal"
+				
+			CheckBox:
+				id: prtSshProxy
+				active: False
+				on_active: root.check_fproxy(self.active)
+					
+			Label:
+				text: "SSH/PROXY"
+					
+			CheckBox:
+				id: prtSshDirect
+				active: False
+				on_active: root.check_fdirect(self.active)
+					
+			Label:
+				text: "DIRECT"
+			
+		BoxLayout:
+			orientation: "horizontal"
+			spacing: "5dp"
+			
+			CheckBox:
+				id: prtSlowDns
+				active: False
+				on_active: root.check_fslow(self.active)
+				
+			Label:
+				text: "SLOWDNS"
+				
+			CheckBox:
+				id: prtUdp
+				active: False
+				on_active: root.check_fudp(self.active)
+				
+			Label:
+				text: "UDP"
+			
+			CheckBox:
+				id: prtV2ray
+				active: False
+				on_active: root.check_fv2ray(self.active)
+				
+			Label:
+				text: 'V2RAY'
+				
+		TextInput:
+			hint_text: "Payload"
+			
+		TextInput:
+			hint_text: "SNI"
+		
+		TextInput:
+			hint_text: "Pub Key"
+			
+		TextInput:
+			hint_text: "NameServer"
+			
+		TextInput:
+			hint_text: "SlowDNS"
+			
+		
+		BoxLayout:
+			orientation: 'horizontal'
+			
+			Button:
+				text: "Cancelar"
+				size_hint: 1, 0.8
+				on_release: root.dismiss()
+				
+			Button:
+				text: "Guardar"
+				size_hint: 1, 0.8
+				on_release: root.guardar_servidor()

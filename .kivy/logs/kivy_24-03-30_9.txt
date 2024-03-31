@@ -1,0 +1,17 @@
+[INFO   ] Logger: Record log in /storage/emulated/0/Archivos_Python/.kivy/logs/kivy_24-03-30_9.txt
+[INFO   ] Kivy: v2.2.1
+[INFO   ] Kivy: Installed at "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.11/site-packages/kivy/__init__.py"
+[INFO   ] Python: v3.11.4 (main, Sep 30 2023, 10:54:38) [GCC 11.4.0]
+[INFO   ] Python: Interpreter at "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/bin/python3"
+[INFO   ] Logger: Purge log fired. Processing...
+[INFO   ] Logger: Purge finished!
+[INFO   ] Factory: 190 symbols loaded
+[INFO   ] Image: Providers: img_tex, img_dds, img_sdl2 (img_pil, img_ffpyplayer ignored)
+[INFO   ] Text: Provider: sdl2
+[WARNING] stderr: Traceback (most recent call last):
+[WARNING] stderr:   File "/storage/emulated/0/Archivos_Python/MyGenerador.py", line 6, in <module>
+[WARNING] stderr:     Builder.load_file("My-Generador.kv")
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.11/site-packages/kivy/lang/builder.py", line 303, in load_file
+[WARNING] stderr:     with open(filename, 'r', encoding=encoding) as fd:
+[WARNING] stderr:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[WARNING] stderr: FileNotFoundError: [Errno 2] No such file or directory: 'My-Generador.kv'
